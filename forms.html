@@ -1,15 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Forms</title>
-</head>
-<body>
-    <h1>Travel Suggestions</h1>
+  </head>
+  <body>
+    <header>
+      <h1>Travel Suggestions</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home Page</a></li>
+          <li>
+            <a href="headings-and-paragraphs.html"
+              >Headings and Paragraphs Page
+            </a>
+          </li>
+          <li><a href="links-and-images.html">Links and Images Page</a></li>
+          <li>
+            <a href="iframes-tables-and-lists,html"
+              >Iframes, Tables, and Lists Page
+            </a>
+          </li>
+          <li><a href="forms.html">Forms Page</a></li>
+        </ul>
+      </nav>
+    </header>
 
-    <!--
+    <main>
+      <!--
       The form tag is used to create a container where all the inputs for a form 
       must be put inside.
       The attributes that are required are name, id, and method.
@@ -22,8 +42,8 @@
       not ask for personal information (serach bars, etc.). Post is used for forms 
       that ask for personal information (login and signup pages, etc.).
     -->
-    <form name="travel-suggestions"  id="travel"  method="get">
-    <!--
+      <form name="travel-suggestions" id="travel" method="get">
+        <!--
       This is a text input. type="text", name, and id are all required attributes.
       The required attribute is only necessary when you want to make sure the user 
       has to fill in the input before submitting the form.
@@ -40,24 +60,26 @@
       When an input is required, it is important to include the word required 
       in the label's text.
     -->
-      <label for="travel-location">Please Enter the City or Country You Suggest I Travel to [required]:</label>  
-      <input type="text" name="destinatation" id="travel-location" required />
-      <br />
-      <br />
-      <br />
 
-       <!--
+        <label for="travel-location">
+          Please Enter the City or Country You Suggest I Travel to [required]:
+        </label>
+        <input type="text" name="destinatation" id="travel-location" required />
+        <br />
+        <br />
+        <br />
+
+        <!--
       This is an email input. It requires type, name, and id.
 
       optional attributes are midlength to define the minimum length entered by the user and maxlength
       to define the maximum
     -->
 
-    <!--<label for="email-address">Please Enter Your Email Address:</label>
+        <!--<label for="email-address">Please Enter Your Email Address:</label>
     <input type="email" name="email" id="email-address" maxlength="40 />"-->
 
-
-    <!--
+        <!--
       This is a password input. type ="password", name, and id are all required 
       attributes.
       As always, each input needs a label with the for attribute to link the label
@@ -66,16 +88,16 @@
       I have commented this input out because I will not be needing a password 
       input for this form.
     -->
-    <!-- <label for="password">Please Enter Your Password:</label>
+        <!-- <label for="password">Please Enter Your Password:</label>
     <input type="password" name="UserPassword" id="password" minlength="10" /> -->
 
-      <!--
+        <!--
         The input type="radio" defines a radio button
       -->
-      <fieldset form="continent">
-        <legend>Which continent is this location in?</legend>
+        <fieldset form="travel">
+          <legend>Which continent is this location in?</legend>
 
-        <!--
+          <!--
           This is a radio button input, which are good when you want the user 
           to select one option from a list of options.
 
@@ -86,38 +108,58 @@
           This is also an input where the label typically shows up after the input.
         -->
 
-      <input type="radio" name="chosen continent" id="North America" value="North America">
-      <label for="North America">North America</label>
-      <br />
-      <input type="radio" name="chosen continent" id="South America" value="South America">
-      <label for="South America">South America</label>
-      <br />
-      <input type="radio" name="chosen continent" id="Africa" value="Africa">
-      <label for="Africa">Africa</label>
-      <br />
-      <input type="radio" name="chosen continent" id="Europe" value="Europe">
-      <label for="Europe">Europe</label>
-      <br />
-      <input type="radio" name="chosen continent" id="Asia" value="Asia">
-      <label for="Asia">Asia</label>
-      </fieldset>
-      <br />
-      <br />
-    
-      <!--
+          <input
+            type="radio"
+            name="chosen-continent"
+            id="north-america"
+            value="north-america" />
+          <label for="north-america">North America</label>
+          <br />
+
+          <input
+            type="radio"
+            name="chosen-continent"
+            id="south-america"
+            value="south-america" />
+          <label for="south-america">South America</label>
+          <br />
+
+          <input
+            type="radio"
+            name="chosen-continent"
+            id="africa"
+            value="africa" />
+          <label for="africa">Africa</label>
+          <br />
+
+          <input
+            type="radio"
+            name="chosen-continent"
+            id="europe"
+            value="europe" />
+          <label for="europe">Europe</label>
+          <br />
+
+          <input type="radio" name="chosen continent" id="asia" value="asia" />
+          <label for="asia">Asia</label>
+        </fieldset>
+        <br />
+        <br />
+
+        <!--
         A fielset is an area in your form where you put inputs that are more related to each other
         than they are related to other inputs in the form (i.e., a list of climates is more
         related to each other than the country the person is recommending).
 
         form is an important attribute to link the fieldset to the form it is related to.
       -->
-      <fieldset form= "Current Climate">
-        <!--
+        <fieldset form="travel">
+          <!--
           A legend describes how the inputs inside the fieldset are all related.
         -->
-        <legend>What type of climate should i be prepared for</legend>
+          <legend>What type of climate should i be prepared for</legend>
 
-      <!--
+          <!--
         This is a checkbox input. Note, this is an input where the input typically comes
         before the label.
 
@@ -125,47 +167,58 @@
         and provides its value to the server if the user checks that box and submits the form.
         In this case, what would be passed to the server is currentClimate=tropical
       -->
-      <input type="checkbox" name="currentClimate" id="tropical" value="tropical">
-      <label for="tropical">Tropical</label>
-      <br />
-      <input type="checkbox" name="currentClimate" id="dry" value="dry">
-      <label for="dry">Dry</label>
-      <br />
-      <input type="checkbox" name="currentClimate" id="temperate" value="temperate">
-      <label for="temperate">Temperate</label>
-      <br />
-      <br />
+          <input
+            type="checkbox"
+            name="currentClimate"
+            id="tropical"
+            value="tropical" />
+          <label for="tropical">Tropical</label>
+          <br />
+          <input type="checkbox" name="currentClimate" id="dry" value="dry" />
+          <label for="dry">Dry</label>
+          <br />
+          <input
+            type="checkbox"
+            name="currentClimate"
+            id="temperate"
+            value="temperate" />
+          <label for="temperate">Temperate</label>
+          <br />
+          <br />
 
-      <label>Do you have any other examples of climates to be prepared for?</label>
-      <input type="text" name="climateSuggestion" id="climate-suggestion" />
-    </fieldset>
-      <br />
+          <label
+            >Do you have any other examples of climates to be prepared
+            for?</label
+          >
+          <input type="text" name="climateSuggestion" id="climate-suggestion" />
+        </fieldset>
+        <br />
 
-      <!--
-        This is a select input, which is essentially a dropdown input.
-
-        name and id are the required attributes for a select input.
-
-        Select inputs are widely used, but can lead to accessibility issues.
-        If you can accomplish the same thing you want to do with a different 
-        type of input (i.e., radio buttons, text-based, etc.), you should use
-        the other method of getting this information.
-      -->
-      
-      <!--<label for="country">Which country is this location in</label>
-      <select name="countrySelect" id="country" required>-->
         <!--
-          optgroups let you group the options inside your select input.
-          label is required so that the optgroup displays what the category is
-          for the options inside that group.
-        -->
+      This is a select input, which is essentially a dropdown input.
+
+      name and id are the required attributes for a select input.
+
+      Select inputs are widely used, but can lead to accessibility issues.
+      If you can accomplish the same thing you want to do with a different 
+      type of input (i.e., radio buttons, text-based, etc.), you should use
+      the other method of getting this information.
+    -->
+
+        <!--<label for="country">Which country is this location in</label>
+    <select name="countrySelect" id="country" required>-->
+        <!--
+      optgroups let you group the options inside your select input.
+      label is required so that the optgroup displays what the category is
+      for the options inside that group.
+    -->
         <!--<optgroup label="North America">-->
-          <!--
-            The option tag is the actual option that a user can select.
-            It requires the value attribute for when the selection gets sent to 
-            the server.
-          -->
-          <!--<option value="canada">Canada</option>
+        <!--
+       The option tag is the actual option that a user can select.
+      It requires the value attribute for when the selection gets sent to 
+      the server.
+    -->
+        <!--<option value="canada">Canada</option>
           <option value="unitedStates">U.S.A</option>
           <option value="mexico">Mexico</option>
         </optgroup>
@@ -174,25 +227,21 @@
           <option value="chile">Chile</option>
         </optgroup>
         </select>-->
-      
 
+        <h3>The rating</h3>
+        <form action="/action_page.php">
+          <input type="checkbox" id="rating1" name="rating1" value="0%-20%" />
+          <label for="rating1">0%-20%</label><br />
+          <input type="checkbox" id="rating2" name="rating2" value="20%-40%" />
+          <label for="rating2">20%-40%</label><br />
+          <input type="checkbox" id="rating3" name="rating3" value="40%-60%" />
+          <label for="rating3"> 40%-60%</label><br />
+          <input type="checkbox" id="rating4" name="rating4" value="60%-80%" />
+          <label for="rating4"> 60%-80%</label><br />
+          <input type="checkbox" id="rating5" name="rating5" value="80%-100%" />
+          <label for="rating5"> 80%-100%</label><br /><br />
 
-    <h3>The rating</h3>
-    <form action="/action_page.php">
-      <input type="checkbox" id="rating1" name="rating1" value="0%-20%">
-      <label for="rating1">0%-20%</label><br>
-      <input type="checkbox" id="rating2" name="rating2" value="20%-40%">
-      <label for="rating2">20%-40%</label><br>
-      <input type="checkbox" id="rating3" name="rating3" value="40%-60%">
-      <label for="rating3"> 40%-60%</label><br>
-      <input type="checkbox" id="rating4" name="rating4" value="60%-80%">
-      <label for="rating4"> 60%-80%</label><br>
-      <input type="checkbox" id="rating5" name="rating5" value="80%-100%">
-      <label for="rating5"> 80%-100%</label><br><br>
-     
-     
-
-       <!--
+          <!--
         This us a textarea input. This allows a user enter multiple lines of information
         for a form.
 
@@ -201,48 +250,72 @@
         user can type before a scrollbar appears. cols defines the number of characters across 
         a user can type before their input goes to the next line.
       -->
-    <label for="comments">Additional Comments</label>
-    <br />
-      <textarea name="additionalComments" id="comments" rows="10" cols="50"></textarea>
-      <br />
-      <br />
+          <label for="comments">Additional Comments</label>
+          <br />
+          <textarea
+            name="additionalComments"
+            id="comments"
+            rows="10"
+            cols="50"></textarea>
+          <br />
+          <br />
 
-      <!--
+          <!--
         This is a telephone input. type="tel", name, and id are all required.
         minlength and maxlength can be good attributes ti use for some basic error-checking.
       -->
-      <label for="telephone">Please enter your telephone number [Example: 1-555-867-5309]:</label>
-      <input type="tel" name="userTel" id="telephone" minlength="14" maxlength="22" />
-      
-      <br />
-      <br />
+          <label for="telephone"
+            >Please enter your telephone number [Example:
+            1-555-867-5309]:</label
+          >
+          <input
+            type="tel"
+            name="userTel"
+            id="telephone"
+            minlength="14"
+            maxlength="22" />
 
-      <!-- 
+          <br />
+          <br />
+
+          <!-- 
         This is an example of a submit button input. Note: This input has to be inside the form tag.
         type="submit", name, and id are all required. value is optional for the same reason as reset.
       -->
-      <input type="submit" name="submitButton" id="submit" value="Click This to Submit Your Suggestion" />
+          <input
+            type="submit"
+            name="submitButton"
+            id="submit"
+            value="Click This to Submit Your Suggestion" />
 
-      <br />
-      <br />
-      
+          <br />
+          <br />
 
-      <!-- 
+          <!-- 
         This is an eaxmple of a reset button input. type="reset", name and id are all required.
         value is an optional attribute for if you want to change the default text on the button.
       -->
-      <input type="reset" name="clearForm" id="clear" value="Click This to Clear All Inputs" />
+          <input
+            type="reset"
+            name="clearForm"
+            id="clear"
+            value="Click This to Clear All Inputs" />
 
-
-    
-
-    <!--
+          <!--
       This is a button input. It requires type, onclick, and value.
     -->
-    <br />
-    <br />
-    <input type="button" onclick="alert('Thank You!')" value="Click Me!">
+          <br />
+          <br />
+          <input
+            type="button"
+            onclick="alert('Thank You!')"
+            value="Click Me!" />
+        </form>
 
-  </form>
-</body>
+        <footer>
+          <p>&#169; Oluwabukunmi Leke-Atere</p>
+        </footer>
+      </form>
+    </main>
+  </body>
 </html>
